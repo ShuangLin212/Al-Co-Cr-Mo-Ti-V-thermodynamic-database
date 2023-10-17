@@ -1,0 +1,76 @@
+$Cr-Mo
+$
+$ TDB-file for the thermodynamic assessment of the Cr-Mo system
+$
+$-----------------------------------------------------------------------------
+$ 2015.4.15
+$ 
+$ TDB file created by T.Abe
+$
+$ Particle Simulation and Thermodynamics Group, National Institute for 
+$ Materials Science. 1-2-1 Sengen, Tsukuba, Ibaraki 305-0047, Japan
+$ e-mail: abe.taichi(=)nims.go.jp (=)=@
+$ Copyright (C) NIMS 2015
+$
+$-----------------------------------------------------------------------------
+$ PARAMETERS ARE TAKEN FROM
+$ An assessment of the Cr-Mo-W system, K.Frisk, P.Gustafson,
+$ CALPHAD, 12 (1988) 247-254.
+$
+$ ------------------------------------------------------------------------------
+ TYPE_DEFINITION % SEQ *!
+ DEFINE_SYSTEM_DEFAULT ELEMENT 2 !
+ DEFAULT_COMMAND DEF_SYS_ELEMENT VA /- !
+$------------------------------------------------------------------------------
+ ELEMENT /-   ELECTRON_GAS              0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT VA   VACUUM                    0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT CR   BCC_A2                    5.1996E+01  4.0500E+03  2.3560E+01!
+ ELEMENT MO   BCC_A2                    9.5940E+01  4.5890E+03  2.8560E+01!
+$-------------------------------------------------------------------------------
+$ FUNCTION CR  
+$------------------------------------------------------------------------------- 
+ FUNCTION GHSERCR  298.15
+ -8856.94+157.48*T-26.908*T*LN(T)+1.89435E-3*T**2-1.47721E-6*T**3
+ +139250*T**(-1); 2180 Y
+ -34869.344+344.18*T-50*T*LN(T)-2885.26E29*T**(-9);  6000.00 N !
+ 
+ FUNCTION GLIQCR 298.15 24339.955-11.420225*T+237.615E-23*T**7+GHSERCR; 2180 Y
+ -16459.984+335.616316*T-50*T*LN(T);  6000.00 N !
+$-------------------------------------------------------------------------------
+$ FUNCTION MO 
+$-------------------------------------------------------------------------------
+ FUNCTION GHSERMO  298.15
+ -7746.302+131.9197*T-23.56414*T*LN(T)-3.443396E-3*T**2+0.566283E-6*T**3
+ +65812*T**(-1)-0.130927E-9*T**4;  2896.00 Y
+ -30556.41+283.559746*T-42.63829*T*LN(T)-4849.315E30*T**(-9);  5000.00 N !
+ 
+ FUNCTION GLIQMO 298.15 41831.347-14.694912*T+424.519E-24*T**7+GHSERMO; 2896 Y
+ 3538.963+271.6697*T-42.63829*T*LN(T);  5000.00 N !
+$-------------------------------------------------------------------------------
+$   BCC_A2  
+$-------------------------------------------------------------------------------
+ TYPE_DEFINITION & GES A_P_D BCC_A2 MAGNETIC -1  0.4!
+ PHASE  BCC_A2 %& 1 1     !
+   CONSTITUENT  BCC_A2 : CR,MO :   !
+ PARAMETER G(BCC_A2,CR;0)  298.15 +GHSERCR;       6000 N !
+ PARAMETER G(BCC_A2,MO;0)  298.15 +GHSERMO;       6000 N !
+ Parameter TC(BCC_A2,CR;0)    298.15 -311.5;         6000 N !
+ Parameter BMAGN(BCC_A2,CR;0) 298.15 -0.008;         6000 N !
+ PARAMETER G(BCC_A2,CR,MO;0)  298.15 +28890-7.962*T; 6000 N !
+ PARAMETER G(BCC_A2,CR,MO;1)  298.15 +5974-2.428*T;  6000 N !
+
+$-------------------------------------------------------------------------------
+$   LIQUID  
+$-------------------------------------------------------------------------------
+ PHASE  LIQUID % 1 1     !
+   CONSTITUENT  LIQUID : CR,MO :   !
+ PARAMETER G(LIQUID,CR;0)    298.15 +GLIQCR;        6000 N !
+ PARAMETER G(LIQUID,MO;0)    298.15 +GLIQMO;        6000 N !
+ PARAMETER G(LIQUID,CR,MO;0) 298.15 +15810-6.714*T; 6000 N !
+ PARAMETER G(LIQUID,CR,MO;1) 298.15 -6220;          6000 N !
+
+$-------------------------------------------------------------------------------
+
+
+
+
