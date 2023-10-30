@@ -1,5 +1,5 @@
 
-$ Database file written 2023-10-16
+$ Database file written 2023-10-30
 $ From database: Shuang Lin                    
  ELEMENT /-   ELECTRON_GAS              0.0000E+00  0.0000E+00  0.0000E+00!
  ELEMENT VA   VACUUM                    0.0000E+00  0.0000E+00  0.0000E+00!
@@ -538,38 +538,11 @@ $ From database: Shuang Lin
        PARA G(ALTI,MO:AL;0) 298.15 +0; 6000 N!
    PARAMETER G(ALTI,TI:AL;0)              298.15 +14.722*T+GFCCTI#+GHSERAL#
   -81008; 6000 N REF0 !
-       PARA G(ALTI,V:AL;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,AL:CO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CO:CO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CR:CO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,MO:CO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,TI:CO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,V:CO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,AL:CR;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CO:CR;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CR:CR;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,MO:CR;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,TI:CR;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,V:CR;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,AL:MO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CO:MO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CR:MO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,MO:MO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,TI:MO;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,V:MO;0) 298.15 +0; 6000 N!
+       
    PARAMETER G(ALTI,AL:TI;0)              298.15 +14.722*T+GFCCTI#+GHSERAL#
   -81008; 6000 N REF0 !
-       PARA G(ALTI,CO:TI;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CR:TI;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,MO:TI;0) 298.15 +0; 6000 N!
    PARAMETER G(ALTI,TI:TI;0)              298.15 +2*GFCCTI#; 6000 N REF0 !
-       PARA G(ALTI,V:TI;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,AL:V;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CO:V;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,CR:V;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,MO:V;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,TI:V;0) 298.15 +0; 6000 N!
-       PARA G(ALTI,V:V;0) 298.15 +0; 6000 N!
+  
    PARAMETER G(ALTI,AL,TI:AL;0)           298.15 +41.695*T-88993; 6000 N 
   REF0 !
    PARAMETER G(ALTI,AL,TI:AL;1)           298.15 +27363; 6000 N REF0 !
