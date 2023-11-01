@@ -1,0 +1,2 @@
+*.tdb linguist-detectable=true
+*.ipynb linguist-detectable=false
